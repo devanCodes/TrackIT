@@ -1,12 +1,14 @@
 // import { Heading } from "@chakra-ui/react";
-import './App.css'
+import "./App.css";
+import React from "react";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+      <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
