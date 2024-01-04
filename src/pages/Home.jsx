@@ -1,10 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
-      <Navbar />
       <h1>Home Page</h1>
       <p>
         Welcome to TrackIT! - Your personalized hub for tracking daily caloric
@@ -16,7 +15,7 @@ function Home() {
         adventure today with TrackIt! - where managing your daily nutrition is
         as easy as a few clicks.
       </p>
-      <a href="/tracking">Start Tracking!</a>
+      <Link to="/tracking">Start Tracking!</Link>
     </>
   );
 }
