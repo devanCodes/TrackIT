@@ -32,6 +32,10 @@ const FoodDiary = () => {
         <AddFoodBtn />
         <QuickAddBtn />
       </div>
+      <div>
+        (This will be a table that computes the amount of calories consumed,
+        daily goal, and amount of calories remaining)
+      </div>
     </>
   );
 };

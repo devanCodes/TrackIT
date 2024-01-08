@@ -14,6 +14,8 @@ import FoodDiary from "./pages/subpages/FoodDiary";
 import CheckIn from "./pages/subpages/CheckIn";
 import Goals from "./pages/subpages/Goals";
 import Profile from "./pages/subpages/Profile";
+import AddFood from "./pages/subpages/inputpages/AddFood";
+import QuickAdd from "./pages/subpages/inputpages/QuickAdd";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/tracking/checkin" element={<CheckIn />} />
           <Route path="/tracking/goals" element={<Goals />} />
           <Route path="/tracking/profile" element={<Profile />} />
+          <Route path="/tracking/diary/add_food" element={<AddFood />} />
+          <Route path="/tracking/diary/quick_add" element={<QuickAdd />} />
           <Route path="*" element={<Error />} />
         </Routes>
       <Footer />
