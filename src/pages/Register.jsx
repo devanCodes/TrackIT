@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from '@chakra-ui/react'
 
 // MUST UPDATE THE FORM
 // REPLACE IMAGE WITH LOGO
@@ -66,7 +67,7 @@ const Register = () => {
                     />
                     {/* <div class="valid-feedback">Looks good!</div> */}
                   </div>
-                  <button class="btn btn-success btn-block">Register</button>
+                  <Button class="btn btn-success btn-block">Register</Button>
                 </form>
               </div>
             </div>

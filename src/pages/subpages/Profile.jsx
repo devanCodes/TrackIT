@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SubNavbar from "../../components/SubNavbar";
+import { Button } from '@chakra-ui/react'
 
 // MUST REFACTOR THIS FROM TAILWIND TO CHAKRA UI!!!!!!!
 // Also need to allow "Set As Goal" buttons to be dynamically updated Goals in Goals subpage
@@ -326,12 +327,12 @@ const Profile = () => {
             </option>
           </select>
         </label>
-        <button
+        <Button
           className="flex justify-center mx-auto font-semibold p-3 px-6 pt-2 w-44 text-white bg-stone-700 rounded-lg baseline hover:bg-stone-600 hover:duration-500 hover:scale-105"
           onClick={calculateCaloricMaintenance} // triggers the calculateCaloricMaintenance function
         >
           Calculate
-        </button>
+        </Button>
         {caloricMaintenance && (
           <div>
             <h2 className="text-center">

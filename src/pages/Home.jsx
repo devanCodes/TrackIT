@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from '@chakra-ui/react'
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
         adventure today with TrackIt! - where managing your daily nutrition is
         as easy as a few clicks.
       </p>
-      <Link to="/tracking">Start Tracking!</Link>
+      <Button><Link to="/tracking">Start Tracking!</Link></Button>
     </>
   );
 }

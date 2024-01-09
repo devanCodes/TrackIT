@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from '@chakra-ui/react'
 
 // WILL NEED TO REFACTOR FROM TAILWIND TO CHAKRAUI
 
@@ -35,12 +36,12 @@ const Contact = () => {
             rows="10" // initial number of rows displayed in the textarea
             className="p-2 mb-4 bg-transparent border-2 rounded-md focus:outline-none"
           />
-          <button
+          <Button
             type="button"
             className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-white bg-gradient-to-r from-lime-700 to-lime-400 drop-shadow-md hover:stroke-white hover:scale-105 hover:duration-1000"
           >
             Send
-          </button>
+          </Button>
         </form>
       </div>
     </div>

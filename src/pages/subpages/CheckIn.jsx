@@ -1,5 +1,6 @@
 import React from "react";
 import SubNavbar from "../../components/SubNavbar";
+import { Button } from '@chakra-ui/react'
 
 const CheckIn = () => {
   return (
@@ -11,7 +12,7 @@ const CheckIn = () => {
         <input type="text" />
         lbs
       </label>
-      <button>Add Weight</button>
+      <Button>Add Weight</Button>
       <div>Weight History (Table Log)</div>
     </>
   );
