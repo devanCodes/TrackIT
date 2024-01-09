@@ -1,5 +1,6 @@
 import React from "react";
 import SubNavbar from "../../../components/SubNavbar";
+import { Link } from "react-router-dom";
 
 const QuickAdd = () => {
   return (
@@ -9,8 +10,8 @@ const QuickAdd = () => {
       <div>
         Meal Name: (dropdown box)
         Calories: (text box w/ units of kcal)
-        <button>Cancel</button>
-        <button>Add To Diary</button>
+        <button><Link to="/tracking/diary">Cancel</Link></button>
+        <button><Link to="/tracking/diary">Add To Diary</Link></button>
       </div>
     </>
   );

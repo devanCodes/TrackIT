@@ -10,7 +10,7 @@ const Tracking = () => {
       <div>
         This will be a table that displays the amount of calories one has
         remaining for the day
-        <Link to="/tracking/diary">Add Food</Link>
+        <button><Link to="/tracking/diary">Add Food</Link></button>
       </div>
     </>
   );

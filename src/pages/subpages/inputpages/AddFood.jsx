@@ -1,5 +1,6 @@
 import React from "react";
 import SubNavbar from "../../../components/SubNavbar";
+import { Link } from "react-router-dom";
 // THIS PAGE NEEDS TO CONDITIONALLY RENDER A BOX AFTER A OOD IS SELECTED
 // THAT INCLUDES THE AMOUNT AND UNITS
 // WORK WITH MYFITNESSPAL 
@@ -14,7 +15,8 @@ const AddFood = () => {
         Search Bar that uses API
         <button>Search</button>
       </div>
-      <button>Add to (meal name that will be dynamic)</button>
+      <button><Link to="/tracking/diary">Cancel</Link></button>
+      <button><Link to="/tracking/diary">Add to (meal name that will be dynamic)</Link></button>
     </>
   );
 };
