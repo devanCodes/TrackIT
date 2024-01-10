@@ -12,6 +12,7 @@ import {
   TableCaption,
   TableContainer,
   Progress,
+  Button,
 } from "@chakra-ui/react";
 
 const Tracking = () => {
@@ -39,9 +40,9 @@ const Tracking = () => {
         </Table>
       </TableContainer>
       <Progress hasStripe value={15} />
-      <button>
+      <Button>
         <Link to="/tracking/diary">Add Food</Link>
-      </button>
+      </Button>
     </>
   );
 };

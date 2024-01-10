@@ -67,7 +67,7 @@ const Register = () => {
                     />
                     {/* <div class="valid-feedback">Looks good!</div> */}
                   </div>
-                  <Button class="btn btn-success btn-block">Register</Button>
+                  <Button>Register</Button>
                 </form>
               </div>
             </div>

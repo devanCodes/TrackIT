@@ -55,7 +55,7 @@ const Login = () => {
                     />
                     {/* <div class="valid-feedback">Looks good!</div> */}
                   </div>
-                  <Button class="btn btn-success btn-block">Login</Button>
+                  <Button>Login</Button>
                 </form>
               </div>
             </div>
