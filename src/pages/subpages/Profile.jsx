@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SubNavbar from "../../components/SubNavbar";
-import { Button } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react';
+import { Link } from "react-router-dom";
 
 // MUST REFACTOR THIS FROM TAILWIND TO CHAKRA UI!!!!!!!
 // Also need to allow "Set As Goal" buttons to be dynamically updated Goals in Goals subpage
@@ -340,11 +341,11 @@ const Profile = () => {
             </h2>
             <h1>Consuming Recommendations:</h1>
             <h2>To Lose Weight: {Math.round(caloricMaintenance) - 500} calories</h2>
-            <button>Set As Goal</button>
+            <Button><Link to="/tracking/goals">Set As Goal</Link></Button>
             <h2>To Maintain Weight: {Math.round(caloricMaintenance)} calories</h2>
-            <button>Set As Goal</button>
+            <Button><Link to="/tracking/goals">Set As Goal</Link></Button>
             <h2>To Gain Weight: {Math.round(caloricMaintenance) + 500} calories</h2>
-            <button>Set As Goal</button>
+            <Button><Link to="/tracking/goals">Set As Goal</Link></Button>
           </div>
         )}
       </div>
