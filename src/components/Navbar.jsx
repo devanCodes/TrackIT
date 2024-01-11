@@ -1,20 +1,147 @@
-import React from "react";
+import { useState } from "react";
+import {
+  useColorMode,
+  Switch,
+  Flex,
+  Button,
+  IconButton,
+} from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+  const [display, changeDisplay] = useState("none");
   return (
-    <nav>
-      <h3>TrackIT!</h3>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/tracking">Tracking</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-      </nav>
-    </nav>
+    <Flex>
+      <Flex pos="fixed" top="1rem" right="1rem" align="center">
+        <Flex display={["none", "none", "flex", "flex"]}>
+          <Link to="/">
+            <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
+              Home
+            </Button>
+          </Link>
+          <Link to="/tracking">
+            <Button
+              as="a"
+              variant="ghost"
+              aria-label="Tracking"
+              my={5}
+              w="100%"
+            >
+              Tracking
+            </Button>
+          </Link>
+          <Link to="/about">
+            <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+              About
+            </Button>
+          </Link>
+          <Link to="/contact">
+            <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
+              Contact
+            </Button>
+          </Link>
+          <Link to="/login">
+            <Button as="a" variant="ghost" aria-label="Login" my={5} w="100%">
+              Login
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button
+              as="a"
+              variant="ghost"
+              aria-label="Register"
+              my={5}
+              w="100%"
+            >
+              Register
+            </Button>
+          </Link>
+        </Flex>
+
+        <IconButton
+          aria-label="Open Menu"
+          size="lg"
+          mr={2}
+          icon={<HamburgerIcon />}
+          display={["flex", "flex", "none", "none"]}
+          onClick={() => changeDisplay("flex")}
+        />
+
+        <Switch color="green" isChecked={isDark} onChange={toggleColorMode} />
+      </Flex>
+
+      <Flex
+        w="100vw"
+        bgColor="gray.50"
+        zIndex={20}
+        h="100vh"
+        pos="fixed"
+        top="0"
+        left="0"
+        overflowY="auto"
+        flexDir="column"
+        display={display}
+      >
+        <Flex justify="flex-end">
+          <IconButton
+            mt={2}
+            mr={4}
+            aria-label="Close Menu"
+            size="lg"
+            icon={<CloseIcon />}
+            onClick={() => changeDisplay("none")}
+          />
+        </Flex>
+        <Flex flexDir="column" align="center">
+          <Link to="/">
+            <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
+              Home
+            </Button>
+          </Link>
+          <Link to="/tracking">
+            <Button
+              as="a"
+              variant="ghost"
+              aria-label="Tracking"
+              my={5}
+              w="100%"
+            >
+              Tracking
+            </Button>
+          </Link>
+          <Link to="/about">
+            <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+              About
+            </Button>
+          </Link>
+          <Link to="/contact">
+            <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
+              Contact
+            </Button>
+          </Link>
+          <Link to="/login">
+            <Button as="a" variant="ghost" aria-label="Login" my={5} w="100%">
+              Login
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button
+              as="a"
+              variant="ghost"
+              aria-label="Register"
+              my={5}
+              w="100%"
+            >
+              Register
+            </Button>
+          </Link>
+        </Flex>
+      </Flex>
+    </Flex>
   );
-}
+};
 
 export default Navbar;
