@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import SubNavbar from "../../components/SubNavbar";
 import { Button } from '@chakra-ui/react';
 import { Link } from "react-router-dom";
 
 // MUST REFACTOR THIS FROM TAILWIND TO CHAKRA UI!!!!!!!
 // Also need to allow "Set As Goal" buttons to be dynamically updated Goals in Goals subpage
 
-const Profile = () => {
+const Calculator = () => {
   // intializing state variables for user inputs; the initial value for gender is 'male', for weightUnit is 'kg', for heightUnit is 'm', and for activityLevel is 'sedentary'; the remaining initial values are empty strings
   // all of these will be used to store the user's inputs for each category
   const [gender, setGender] = useState("male");
@@ -131,8 +130,12 @@ const Profile = () => {
 
   return (
     <>
-      <SubNavbar />
-      <h1>Profile SubPage</h1>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h1>Calculator Page</h1>
       {/* JSX structure that includes a form for user inputs and a button to
       trigger the calculation // input fields are controlled components, meaning
       their values are controlled by the state variables, and their changes are
@@ -353,4 +356,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Calculator;

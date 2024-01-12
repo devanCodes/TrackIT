@@ -5,6 +5,14 @@ import {
   Flex,
   Button,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
@@ -22,17 +30,39 @@ const Navbar = () => {
               Home
             </Button>
           </Link>
-          <Link to="/tracking">
-            <Button
-              as="a"
+          <Menu>
+            <MenuButton
+              as={Button}
               variant="ghost"
               aria-label="Tracking"
               my={5}
               w="100%"
             >
               Tracking
-            </Button>
-          </Link>
+            </MenuButton>
+            <MenuList>
+              <MenuGroup title="Tracking">
+                <MenuItem>
+                  <Link to="/tracking">Daily Summary</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="/tracking/diary">Food Diary</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="/tracking/checkin">Check-In</Link>
+                </MenuItem>
+              </MenuGroup>
+              <MenuDivider />
+              <MenuGroup title="Profile">
+                <MenuItem>
+                  <Link to="/tracking/goals">Goals</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="/tracking/calculator">H-B Calculator</Link>
+                </MenuItem>
+              </MenuGroup>
+            </MenuList>
+          </Menu>
           <Link to="/about">
             <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
               About
@@ -97,33 +127,55 @@ const Navbar = () => {
         </Flex>
         <Flex flexDir="column" align="center">
           <Link to="/">
-            <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">
+            <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%" onClick={() => changeDisplay("none")}>
               Home
             </Button>
           </Link>
-          <Link to="/tracking">
-            <Button
-              as="a"
+          <Menu>
+            <MenuButton
+              as={Button}
               variant="ghost"
               aria-label="Tracking"
               my={5}
               w="100%"
             >
               Tracking
-            </Button>
-          </Link>
+            </MenuButton>
+            <MenuList>
+              <MenuGroup title="Tracking">
+                <MenuItem>
+                  <Link to="/tracking" onClick={() => changeDisplay("none")}>Daily Summary</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="/tracking/diary"onClick={() => changeDisplay("none")}>Food Diary</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="/tracking/checkin"onClick={() => changeDisplay("none")}>Check-In</Link>
+                </MenuItem>
+              </MenuGroup>
+              <MenuDivider />
+              <MenuGroup title="Profile">
+                <MenuItem>
+                  <Link to="/tracking/goals"onClick={() => changeDisplay("none")}>Goals</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to="/tracking/calculator"onClick={() => changeDisplay("none")}>H-B Calculator</Link>
+                </MenuItem>
+              </MenuGroup>
+            </MenuList>
+          </Menu>
           <Link to="/about">
-            <Button as="a" variant="ghost" aria-label="About" my={5} w="100%">
+            <Button as="a" variant="ghost" aria-label="About" my={5} w="100%" onClick={() => changeDisplay("none")}>
               About
             </Button>
           </Link>
           <Link to="/contact">
-            <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%">
+            <Button as="a" variant="ghost" aria-label="Contact" my={5} w="100%" onClick={() => changeDisplay("none")}>
               Contact
             </Button>
           </Link>
           <Link to="/login">
-            <Button as="a" variant="ghost" aria-label="Login" my={5} w="100%">
+            <Button as="a" variant="ghost" aria-label="Login" my={5} w="100%" onClick={() => changeDisplay("none")}>
               Login
             </Button>
           </Link>
@@ -134,6 +186,7 @@ const Navbar = () => {
               aria-label="Register"
               my={5}
               w="100%"
+              onClick={() => changeDisplay("none")}
             >
               Register
             </Button>

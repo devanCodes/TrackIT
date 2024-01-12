@@ -5,6 +5,11 @@ import { Button } from '@chakra-ui/react'
 const Home = () => {
   return (
     <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Home Page</h1>
       <p>
         Welcome to TrackIT! - Your personalized hub for tracking daily caloric

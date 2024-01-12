@@ -1,5 +1,4 @@
 import React from "react";
-import SubNavbar from "../../components/SubNavbar";
 import {
   Table,
   Thead,
@@ -15,7 +14,11 @@ import { Link } from "react-router-dom";
 const Goals = () => {
   return (
     <>
-      <SubNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Goals SubPage</h1>
       <TableContainer>
         <Table variant="simple">
@@ -39,7 +42,7 @@ const Goals = () => {
         </Table>
       </TableContainer>
       <br></br>
-      <p>Not sure where to start? Check out our <Link to="/tracking/profile">Profile</ Link> sub-page to determine your caloric maintenance!</p>
+      <p>Not sure where to start? Check out our <Link to="/tracking/calculator">H-B Calculator</ Link> sub-page to determine your caloric maintenance!</p>
     </>
   );
 };

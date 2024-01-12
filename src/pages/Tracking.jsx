@@ -1,5 +1,4 @@
 import React from "react";
-import SubNavbar from "../components/SubNavbar";
 import { Link } from "react-router-dom";
 import {
   Table,
@@ -16,7 +15,11 @@ import {
 const Tracking = () => {
   return (
     <>
-      <SubNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Tracking Page (Daily Summary SubPage)</h1>
       <TableContainer>
         <Table variant="simple">

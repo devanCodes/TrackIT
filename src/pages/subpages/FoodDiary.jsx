@@ -1,12 +1,15 @@
 import React from "react";
-import SubNavbar from "../../components/SubNavbar";
 import AddFoodBtn from "../../components/AddFoodBtn";
 import QuickAddBtn from "../../components/QuickAddBtn";
 
 const FoodDiary = () => {
   return (
     <>
-      <SubNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Food Diary SubPage</h1>
       <h2>
         Food Diary For: <div>(Use Pre-Built Calendar w/ Icon)</div>

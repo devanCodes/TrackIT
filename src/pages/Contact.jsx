@@ -6,6 +6,11 @@ import { Button } from '@chakra-ui/react'
 const Contact = () => {
   return (
     <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Contact Page</h1>
     {/* setting up a flexbox container with a vertical layout */}
     <div className="flex flex-col mb-10 mx-auto">

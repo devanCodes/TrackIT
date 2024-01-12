@@ -7,6 +7,11 @@ import { PiQuotesFill } from "react-icons/pi";
 const About = () => {
   return (
     <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>About Page</h1>
       <h1>About TrackIT!</h1>
       <p>

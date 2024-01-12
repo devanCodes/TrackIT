@@ -1,11 +1,14 @@
 import React from "react";
-import SubNavbar from "../../components/SubNavbar";
 import { Button } from '@chakra-ui/react'
 
 const CheckIn = () => {
   return (
     <>
-      <SubNavbar />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Check-In SubPage</h1>
       <h2>Enter today's weight:</h2>
       <label htmlFor="">

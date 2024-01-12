@@ -7,6 +7,11 @@ import { Button } from '@chakra-ui/react'
 const Login = () => {
   return (
     <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Login Page</h1>
       <br></br>
       <br></br>

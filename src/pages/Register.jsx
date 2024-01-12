@@ -7,6 +7,11 @@ import { Button } from '@chakra-ui/react'
 const Register = () => {
   return (
     <>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
       <h1>Register Page</h1>
       <br></br>
       <br></br>
