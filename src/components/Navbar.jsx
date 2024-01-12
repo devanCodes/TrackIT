@@ -21,7 +21,7 @@ const Navbar = () => {
   const [display, changeDisplay] = useState("none");
   return (
     <Flex>
-      <Flex pos="fixed" top="1rem" right="1rem" align="center">
+      <Flex pos="absolute" top="1rem" right="1rem" align="center">
         <Flex display={["none", "none", "flex", "flex"]}>
           <Link to="/">
             <Button as="a" variant="ghost" aria-label="Home" my={5} w="100%">

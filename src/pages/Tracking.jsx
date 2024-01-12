@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
   Table,
   Thead,
@@ -15,11 +17,12 @@ import {
 const Tracking = () => {
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Navbar />
       <h1>Tracking Page (Daily Summary SubPage)</h1>
       <TableContainer>
         <Table variant="simple">
@@ -44,6 +47,7 @@ const Tracking = () => {
       <Button>
         <Link to="/tracking/diary">Add Food</Link>
       </Button>
+      <Footer />
     </>
   );
 };

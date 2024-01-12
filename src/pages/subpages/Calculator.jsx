@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Button } from '@chakra-ui/react';
+import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 // MUST REFACTOR THIS FROM TAILWIND TO CHAKRA UI!!!!!!!
 // Also need to allow "Set As Goal" buttons to be dynamically updated Goals in Goals subpage
@@ -130,12 +132,13 @@ const Calculator = () => {
 
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <h1>Calculator Page</h1>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Navbar />
+      <h1>Calculator Page</h1>
       {/* JSX structure that includes a form for user inputs and a button to
       trigger the calculation // input fields are controlled components, meaning
       their values are controlled by the state variables, and their changes are
@@ -343,15 +346,28 @@ const Calculator = () => {
               Caloric Maintenance: {Math.round(caloricMaintenance)} calories
             </h2>
             <h1>Consuming Recommendations:</h1>
-            <h2>To Lose Weight: {Math.round(caloricMaintenance) - 500} calories</h2>
-            <Button><Link to="/tracking/goals">Set As Goal</Link></Button>
-            <h2>To Maintain Weight: {Math.round(caloricMaintenance)} calories</h2>
-            <Button><Link to="/tracking/goals">Set As Goal</Link></Button>
-            <h2>To Gain Weight: {Math.round(caloricMaintenance) + 500} calories</h2>
-            <Button><Link to="/tracking/goals">Set As Goal</Link></Button>
+            <h2>
+              To Lose Weight: {Math.round(caloricMaintenance) - 500} calories
+            </h2>
+            <Button>
+              <Link to="/tracking/goals">Set As Goal</Link>
+            </Button>
+            <h2>
+              To Maintain Weight: {Math.round(caloricMaintenance)} calories
+            </h2>
+            <Button>
+              <Link to="/tracking/goals">Set As Goal</Link>
+            </Button>
+            <h2>
+              To Gain Weight: {Math.round(caloricMaintenance) + 500} calories
+            </h2>
+            <Button>
+              <Link to="/tracking/goals">Set As Goal</Link>
+            </Button>
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 };

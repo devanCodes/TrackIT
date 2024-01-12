@@ -10,15 +10,18 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const Goals = () => {
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Navbar />
       <h1>Goals SubPage</h1>
       <TableContainer>
         <Table variant="simple">
@@ -42,7 +45,12 @@ const Goals = () => {
         </Table>
       </TableContainer>
       <br></br>
-      <p>Not sure where to start? Check out our <Link to="/tracking/calculator">H-B Calculator</ Link> sub-page to determine your caloric maintenance!</p>
+      <p>
+        Not sure where to start? Check out our{" "}
+        <Link to="/tracking/calculator">H-B Calculator</Link> sub-page to
+        determine your caloric maintenance!
+      </p>
+      <Footer />
     </>
   );
 };

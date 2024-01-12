@@ -1,5 +1,7 @@
 import React from "react";
 import { PiQuotesFill } from "react-icons/pi";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // WILL NEED TO REFACTOR FROM TAILWIND TO CHAKRAUI
 // PROBABLY WILL DO A DIFFERENT DESIGN TO NOT COPY CLAYDY'S WEBSITE
@@ -7,11 +9,12 @@ import { PiQuotesFill } from "react-icons/pi";
 const About = () => {
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Navbar />
       <h1>About Page</h1>
       <h1>About TrackIT!</h1>
       <p>
@@ -136,6 +139,7 @@ const About = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

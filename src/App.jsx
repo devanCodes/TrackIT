@@ -8,8 +8,6 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Tracking from "./pages/Tracking";
 import Error from "./pages/Error";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import FoodDiary from "./pages/subpages/FoodDiary";
 import CheckIn from "./pages/subpages/CheckIn";
 import Goals from "./pages/subpages/Goals";
@@ -23,7 +21,6 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -39,7 +36,6 @@ function App() {
           <Route path="/tracking/diary/quick_add" element={<QuickAdd />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      <Footer />
       </Router>
     </>
   );

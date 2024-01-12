@@ -1,5 +1,7 @@
 import React from "react";
-import { Button } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // MUST UPDATE THE FORM
 // REPLACE IMAGE WITH LOGO
@@ -12,6 +14,7 @@ const Register = () => {
     <br></br>
     <br></br>
     <br></br>
+    <Navbar />
       <h1>Register Page</h1>
       <br></br>
       <br></br>
@@ -79,6 +82,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,15 +1,18 @@
 import React from "react";
 import AddFoodBtn from "../../components/AddFoodBtn";
 import QuickAddBtn from "../../components/QuickAddBtn";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const FoodDiary = () => {
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Navbar />
       <h1>Food Diary SubPage</h1>
       <h2>
         Food Diary For: <div>(Use Pre-Built Calendar w/ Icon)</div>
@@ -39,6 +42,7 @@ const FoodDiary = () => {
         (This will be a table that computes the amount of calories consumed,
         daily goal, and amount of calories remaining)
       </div>
+      <Footer />
     </>
   );
 };
