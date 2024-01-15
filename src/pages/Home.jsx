@@ -15,10 +15,10 @@ const Home = () => {
       bgSize="cover"
     >
       <Navbar />
-      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="bold" mt={50}>
+      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
         Welcome to TrackIT!
       </Text>
-      <Text fontSize={["lg", "lg", "2xl"]} mx={100}>
+      <Text fontSize={["lg", "lg", "2xl"]} mx={100} fontWeight="bold">
         Your personalized hub for tracking daily caloric intake effortlessly.
         With our user-friendly interface and comprehensive food database powered
         by APIs, you can easily select and log your meals, keeping a close eye
