@@ -9,10 +9,10 @@ const Home = () => {
     <>
       <Flex height="100vh" direction="column">
         <Navbar />
-        <Text fontSize="6xl" fontWeight="bold" mt={12}>
+        <Text fontSize="6xl" fontWeight="bold" mt={50}>
           Welcome to TrackIT!
         </Text>
-        <Text fontSize="2xl">
+        <Text fontSize="2xl" mx={100}>
           Your personalized hub for tracking daily caloric intake effortlessly.
           With our user-friendly interface and comprehensive food database
           powered by APIs, you can easily select and log your meals, keeping a
@@ -22,9 +22,11 @@ const Home = () => {
           today with TrackIt! - where managing your daily nutrition is as easy
           as a few clicks.
         </Text>
-        <Button size="lg">
-          <Link to="/tracking">Start Tracking!</Link>
-        </Button>
+        <Link to="/tracking">
+          <Button size="lg" maxWidth={200} mx="auto" my={15}>
+            Start Tracking!
+          </Button>
+        </Link>
         <Footer />
       </Flex>
     </>
