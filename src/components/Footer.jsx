@@ -58,7 +58,7 @@ const Footer = () => {
           </Link>
         </Flex>
       </Box>
-      <Text fontSize="md" mt={2} opacity={0.5}>
+      <Text fontSize="md" mt={2}>
         {`© ${new Date().getFullYear()} TrackIT! All rights reserved.`}
       </Text>
     </Flex>

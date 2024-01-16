@@ -4,15 +4,12 @@ import {
   Flex,
   Text,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Image,
   Stack,
   Heading,
   Divider,
-  Button,
-  ButtonGroup,
   SimpleGrid,
 } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";

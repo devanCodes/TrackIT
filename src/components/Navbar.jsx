@@ -1,7 +1,5 @@
 import { useState } from "react";
 import {
-  useColorMode,
-  Switch,
   Flex,
   Button,
   IconButton,
@@ -16,8 +14,6 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const isDark = colorMode === "dark";
   const [display, changeDisplay] = useState("none");
   return (
     <Flex>
@@ -98,7 +94,6 @@ const Navbar = () => {
           onClick={() => changeDisplay("flex")}
         />
 
-        <Switch color="green" isChecked={isDark} onChange={toggleColorMode} />
       </Flex>
 
       <Flex
