@@ -1,5 +1,20 @@
 import React from "react";
 import { PiQuotesFill } from "react-icons/pi";
+import {
+  Flex,
+  Text,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Image,
+  Stack,
+  Heading,
+  Divider,
+  Button,
+  ButtonGroup,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -8,16 +23,12 @@ import Footer from "../components/Footer";
 
 const About = () => {
   return (
-    <>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+    <Flex h="100vh" w="100%" direction="column">
       <Navbar />
-      <h1>About Page</h1>
-      <h1>About TrackIT!</h1>
-      <p>
+      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
+        About TrackIT!
+      </Text>
+      <Text fontSize={["md", "md", "lg"]} mx={100}>
         In the vibrant world of health and wellness, TrackIT! emerged as a
         beacon of nutritional empowerment. Founded in 2023 by passionate fitness
         enthusiast and Software Developer, Devan Hailey, TrackIT! was born out
@@ -43,104 +54,107 @@ const About = () => {
         Devan, as well as the thriving community it has fostered. From its
         humble beginnings to a global phenomenon, TrackIT! remains dedicated to
         helping individuals make informed choices, one calorie at a time.
-      </p>
-      <br></br>
-      <br></br>
-      <h1>Testimonials</h1>
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 mt-10 p-6">
-        <div className="relative bg-purple-600 text-white p-8 rounded-lg xl:col-span-2 xl:row-start-1">
-          <div className="absolute top-0 right-6 z-0 text-6xl">
-            <PiQuotesFill />
-          </div>
-          <div className="relative z-10 flex justify-start space-x-4">
-            <img
-              src="https://ui-avatars.com/api/?name=D"
-              alt=""
-              className="h-8 w-8 rounded-full border-2 border-purple-400"
+      </Text>
+      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
+        Testimonials
+      </Text>
+
+      <SimpleGrid gap={4} columns={[1, 1, 2, 2]} justifyContent="space-between" alignItems="center" mx="auto">
+        <Card maxW="sm">
+          <CardBody backgroundColor="blue.200">
+            <Image
+              src="https://ui-avatars.com/api/?name=DH"
+              alt="Devan's Photo/Avatar"
+              borderRadius="lg"
+              mx="auto"
             />
-            <div>
-              <h2 className="font-bold text-sm">Devan</h2>
-              <h3 className="text-xs opacity-50">Software Developer</h3>
-            </div>
-          </div>
-          <p className="relative z-10 mt-4 font-bold text-xl leading-tight">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus
-            facilis alias totam perferendis cupiditate delectus nobis,
-            aspernatur repudiandae amet unde adipisci earum voluptatibus
-            perspiciatis non dicta vero enim voluptates odio.
-          </p>
-        </div>
-        <div className="relative bg-gray-600 text-white p-8 rounded-lg xl:col-span-2 xl:row-start-3">
-          <div className="absolute top-0 right-6 z-0 text-6xl lg:hidden">
-            <PiQuotesFill />
-          </div>
-          <div className="relative z-10 flex justify-start space-x-4">
-            <img
+            <Stack mt="4" spacing="3">
+              <Heading size="md">Devan Hailey</Heading>
+              <Heading size="xs">Software Developer</Heading>
+            </Stack>
+          </CardBody>
+          <CardFooter backgroundColor="gray.200">
+            <Text fontWeight="semibold">
+              <PiQuotesFill />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus facilis alias totam perferendis cupiditate delectus
+              nobis, aspernatur repudiandae amet unde adipisci earum
+              voluptatibus perspiciatis non dicta vero enim voluptates odio.
+            </Text>
+          </CardFooter>
+        </Card>
+        <Card maxW="sm">
+          <CardBody backgroundColor="blue.200">
+            <Image
               src="https://ui-avatars.com/api/?name=C"
-              alt=""
-              className="h-8 w-8 rounded-full border-2 border-gray-400"
+              alt="Claydy's Photo/Avatar"
+              borderRadius="lg"
+              mx="auto"
             />
-            <div>
-              <h2 className="font-bold text-sm">Claydy</h2>
-              <h3 className="text-xs opacity-50">Lawyer</h3>
-            </div>
-          </div>
-          <p className="relative z-10 mt-4 font-bold text-xl leading-tight">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nobis
-            quod vero, repellat magni autem quia. Illum cumque voluptatum ut,
-            dicta quo minima consequuntur enim, temporibus, eaque esse omnis
-            nam!
-          </p>
-        </div>
-        <div className="relative bg-turqoise_dark text-gray-800 p-8 rounded-lg xl:col-span-2 xl:row-start-2">
-          <div className="absolute top-0 right-6 z-0 text-6xl lg:hidden">
-            <PiQuotesFill />
-          </div>
-          <div className="relative z-10 flex justify-start space-x-4">
-            <img
+            <Stack mt="4" spacing="3">
+              <Heading size="md">Claydy</Heading>
+              <Heading size="xs">Lawyer</Heading>
+            </Stack>
+          </CardBody>
+          <CardFooter backgroundColor="gray.200">
+            <Text fontWeight="semibold">
+              <PiQuotesFill />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus facilis alias totam perferendis cupiditate delectus
+              nobis, aspernatur repudiandae amet unde adipisci earum
+              voluptatibus perspiciatis non dicta vero enim voluptates odio.
+            </Text>
+          </CardFooter>
+        </Card>
+        <Card maxW="sm">
+          <CardBody backgroundColor="blue.200">
+            <Image
               src="https://ui-avatars.com/api/?name=R"
-              alt=""
-              className="h-8 w-8 rounded-full border-2 border-turqoise"
+              alt="Ron's Photo/Avatar"
+              borderRadius="lg"
+              mx="auto"
             />
-            <div>
-              <h2 className="font-bold text-sm">Ron</h2>
-              <h3 className="text-xs opacity-50">
-                Retired Director of Operations
-              </h3>
-            </div>
-          </div>
-          <p className="relative z-10 mt-4 font-bold text-xl leading-tight">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, natus
-            iusto! Ad odio, suscipit saepe, natus ea dolores minima reiciendis
-            sed doloremque laboriosam deserunt numquam, a molestiae asperiores
-            eveniet magnam?
-          </p>
-        </div>
-        <div className="relative bg-gray-900 text-white p-8 rounded-lg xl:col-span-2">
-          <div className="absolute top-0 right-6 z-0 text-6xl lg:hidden">
-            <PiQuotesFill />
-          </div>
-          <div className="relative z-10 flex justify-start space-x-4">
-            <img
+            <Stack mt="4" spacing="3">
+              <Heading size="md">Ron</Heading>
+              <Heading size="xs">Retired Director of Operations</Heading>
+            </Stack>
+          </CardBody>
+          <CardFooter backgroundColor="gray.200">
+            <Text fontWeight="semibold">
+              <PiQuotesFill />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus facilis alias totam perferendis cupiditate delectus
+              nobis, aspernatur repudiandae amet unde adipisci earum
+              voluptatibus perspiciatis non dicta vero enim voluptates odio.
+            </Text>
+          </CardFooter>
+        </Card>
+        <Card maxW="sm">
+          <CardBody backgroundColor="blue.200">
+            <Image
               src="https://ui-avatars.com/api/?name=M"
-              alt=""
-              className="h-8 w-8 rounded-full border-2 border-gray-700"
+              alt="Michelle's Photo/Avatar"
+              borderRadius="lg"
+              mx="auto"
             />
-            <div>
-              <h2 className="font-bold text-sm">Michelle</h2>
-              <h3 className="text-xs opacity-50">PE Teacher</h3>
-            </div>
-          </div>
-          <p className="relative z-10 mt-4 font-bold text-xl leading-tight">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Reprehenderit quasi a nemo repellendus assumenda nostrum id
-            cupiditate inventore quia numquam, incidunt dolor, totam laudantium
-            soluta maiores nulla consectetur. Explicabo, maxime.
-          </p>
-        </div>
-      </div>
+            <Stack mt="4" spacing="3">
+              <Heading size="md">Michelle</Heading>
+              <Heading size="xs">PE Teacher</Heading>
+            </Stack>
+          </CardBody>
+          <CardFooter backgroundColor="gray.200">
+            <Text fontWeight="semibold">
+              <PiQuotesFill />
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Accusamus facilis alias totam perferendis cupiditate delectus
+              nobis, aspernatur repudiandae amet unde adipisci earum
+              voluptatibus perspiciatis non dicta vero enim voluptates odio.
+            </Text>
+          </CardFooter>
+        </Card>
+      </SimpleGrid>
       <Footer />
-    </>
+    </Flex>
   );
 };
 
