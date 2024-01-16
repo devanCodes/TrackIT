@@ -4,15 +4,12 @@ import {
   Flex,
   Text,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   Image,
   Stack,
   Heading,
   Divider,
-  Button,
-  ButtonGroup,
   SimpleGrid,
 } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
@@ -23,7 +20,7 @@ import Footer from "../components/Footer";
 
 const About = () => {
   return (
-    <Flex h="100vh" w="100%" direction="column">
+    <Flex h="100vh" w="100%" direction="column" backgroundColor="rgba(255,205,84,255)">
       <Navbar />
       <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
         About TrackIT!

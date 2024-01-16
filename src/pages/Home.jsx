@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flex, Button, Text } from "@chakra-ui/react";
+import { Flex, Button, Text, Box } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import bgImage from "../assets/bgImage.jpg"
+import bgImage from "../assets/bgImage.jpg";
 
 const Home = () => {
   return (
@@ -28,11 +28,11 @@ const Home = () => {
         TrackIt! - where managing your daily nutrition is as easy as a few
         clicks.
       </Text>
-      <Link to="/tracking">
-        <Button size="lg" maxWidth={200} mx="auto" my={15}>
-          Start Tracking!
-        </Button>
-      </Link>
+      <Box>
+        <Link to="/tracking" maxWidth={200} mx="auto" my={15}>
+          <Button size="lg">Start Tracking!</Button>
+        </Link>
+      </Box>
       <Footer />
     </Flex>
   );
