@@ -20,12 +20,12 @@ import Footer from "../components/Footer";
 
 const About = () => {
   return (
-    <Flex h="100vh" w="100%" direction="column" backgroundColor="rgba(255,205,84,255)">
+    <Flex w="100%" direction="column" backgroundColor="rgba(255,205,84,255)" bgSize="cover">
       <Navbar />
-      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
+      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={70} mx="auto">
         About TrackIT!
       </Text>
-      <Text fontSize={["md", "md", "lg"]} mx={100}>
+      <Text fontSize={["md", "md", "lg"]} mx={100} align="center">
         In the vibrant world of health and wellness, TrackIT! emerged as a
         beacon of nutritional empowerment. Founded in 2023 by passionate fitness
         enthusiast and Software Developer, Devan Hailey, TrackIT! was born out
@@ -52,10 +52,9 @@ const About = () => {
         humble beginnings to a global phenomenon, TrackIT! remains dedicated to
         helping individuals make informed choices, one calorie at a time.
       </Text>
-      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
+      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50} mx="auto">
         Testimonials
       </Text>
-
       <SimpleGrid gap={4} columns={[1, 1, 2, 2]} justifyContent="space-between" alignItems="center" mx="auto">
         <Card maxW="sm">
           <CardBody backgroundColor="blue.200">
@@ -66,8 +65,8 @@ const About = () => {
               mx="auto"
             />
             <Stack mt="4" spacing="3">
-              <Heading size="md">Devan Hailey</Heading>
-              <Heading size="xs">Software Developer</Heading>
+              <Heading size="md" mx="auto">Devan Hailey</Heading>
+              <Heading size="xs" mx="auto">Software Developer</Heading>
             </Stack>
           </CardBody>
           <CardFooter backgroundColor="gray.200">
@@ -89,8 +88,8 @@ const About = () => {
               mx="auto"
             />
             <Stack mt="4" spacing="3">
-              <Heading size="md">Claydy</Heading>
-              <Heading size="xs">Lawyer</Heading>
+              <Heading size="md" mx="auto">Claydy</Heading>
+              <Heading size="xs" mx="auto">Lawyer</Heading>
             </Stack>
           </CardBody>
           <CardFooter backgroundColor="gray.200">
@@ -112,8 +111,8 @@ const About = () => {
               mx="auto"
             />
             <Stack mt="4" spacing="3">
-              <Heading size="md">Ron</Heading>
-              <Heading size="xs">Retired Director of Operations</Heading>
+              <Heading size="md" mx="auto">Ron</Heading>
+              <Heading size="xs" mx="auto">Retired Director of Operations</Heading>
             </Stack>
           </CardBody>
           <CardFooter backgroundColor="gray.200">
@@ -135,8 +134,8 @@ const About = () => {
               mx="auto"
             />
             <Stack mt="4" spacing="3">
-              <Heading size="md">Michelle</Heading>
-              <Heading size="xs">PE Teacher</Heading>
+              <Heading size="md" mx="auto">Michelle</Heading>
+              <Heading size="xs" mx="auto">PE Teacher</Heading>
             </Stack>
           </CardBody>
           <CardFooter backgroundColor="gray.200">

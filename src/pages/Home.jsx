@@ -8,17 +8,17 @@ import bgImage from "../assets/bgImage.jpg";
 const Home = () => {
   return (
     <Flex
-      h="100vh"
+      minHeight="100vh"
       w="100%"
       direction="column"
       bgImage={bgImage}
       bgSize="cover"
     >
       <Navbar />
-      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50}>
+      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" pt={70} mt="auto" mx="auto">
         Welcome to TrackIT!
       </Text>
-      <Text fontSize={["lg", "lg", "2xl"]} mx={100} fontWeight="bold">
+      <Text fontSize={["lg", "lg", "2xl"]} mx="auto" px={250} fontWeight="bold" align="center">
         Your personalized hub for tracking daily caloric intake effortlessly.
         With our user-friendly interface and comprehensive food database powered
         by APIs, you can easily select and log your meals, keeping a close eye
@@ -28,8 +28,8 @@ const Home = () => {
         TrackIt! - where managing your daily nutrition is as easy as a few
         clicks.
       </Text>
-      <Box>
-        <Link to="/tracking" maxWidth={200} mx="auto" my={15}>
+      <Box maxWidth={200} mx="auto" pt={5}>
+        <Link to="/tracking">
           <Button size="lg">Start Tracking!</Button>
         </Link>
       </Box>
