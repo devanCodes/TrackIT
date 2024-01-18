@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Flex,
-  Text,
   Button,
   FormControl,
   FormLabel,
@@ -15,6 +14,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 // NEED TO WORK ON FORM ROUTE AND ACTUALLY VALIDATING EMAIL WITH FORMIK AND INCORPORATE FLASH
+// IF USER IS ALREADY LOGGED IN, PREFILL EMAIL
 
 const Contact = () => {
   function validateName(value) {
