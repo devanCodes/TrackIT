@@ -16,7 +16,6 @@ import Footer from "../components/Footer";
 import loginImage from "../assets/loginImage.jpg";
 
 // MUST UPDATE THE FORM
-// REPLACE IMAGE WITH LOGO
 
 const Login = () => {
   function validateUserame(value) {
@@ -44,7 +43,7 @@ const Login = () => {
       bgSize="cover"
     >
       <Navbar />
-      <Card mx="auto" mt={95} direction="column" maxWidth={["400px", "400px", "500px"]}>
+      <Card mx="auto" mt={95} direction="column" maxWidth={["400px", "400px", "500px"]} shadow="lg">
         <Image
           src={loginImage}
           alt="Food Plate Login Image"

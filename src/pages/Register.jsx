@@ -1,89 +1,153 @@
 import React from "react";
-import { Button } from '@chakra-ui/react';
+import {
+  Button,
+  Text,
+  Image,
+  Flex,
+  Card,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  Input,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import registerImage from "../assets/registerImage.jpg";
 
 // MUST UPDATE THE FORM
-// REPLACE IMAGE WITH LOGO
 
 const Register = () => {
+  function validateUserame(value) {
+    let error;
+    if (!value) {
+      error = "Username is required";
+    }
+    return error;
+  }
+
+  function validateEmail(value) {
+    let error;
+    if (!value) {
+      error = "Email is required";
+    }
+    return error;
+  }
+
+  function validatePassword(value) {
+    let error;
+    if (!value) {
+      error = "Password is required";
+    }
+    return error;
+  }
+
   return (
-    <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <Navbar />
-      <h1>Register Page</h1>
-      <br></br>
-      <br></br>
-      <div class="container d-flex justify-content-center align-items-center mt-5">
-        <div class="row">
-          <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-            <div class="card shadow">
-              <img
-                src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
-                alt=""
-                class="card-img-top"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Register</h5>
-                <form
-                  action="/register"
-                  method="POST"
-                  class="validated-form"
-                  novalidate
-                >
-                  <div class="mb-3">
-                    <label class="form-label" for="username">
-                      Username
-                    </label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      id="username"
-                      name="username"
-                      required
-                      autofocus
+    <Flex
+      w="100%"
+      minHeight="100vh"
+      direction="column"
+      backgroundColor="rgba(255,205,84,255)"
+      bgSize="cover"
+    >
+      <Navbar />
+      <Card
+        mx="auto"
+        mt={95}
+        direction="column"
+        maxWidth={["400px", "400px", "500px"]}
+        shadow="lg"
+      >
+        <Image src={registerImage} alt="Food Plate Login Image" />
+        <Text fontSize="xl" fontWeight="bold" ml={5} mt={3}>
+          Register
+        </Text>
+        <Formik
+          initialValues={{ username: "", email: "", password: "" }}
+          onSubmit={(values, actions) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              actions.setSubmitting(false);
+            }, 1000);
+          }}
+        >
+          {(props) => (
+            <Form>
+              <Field name="username" validate={validateUserame}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.username && form.touched.username}
+                  >
+                    <FormLabel ml={5}>Username</FormLabel>
+                    <Input
+                      {...field}
+                      placeholder="Username"
+                      backgroundColor="white"
+                      mb={2}
+                      mx={5}
+                      width="90%"
                     />
-                    {/* <div class="valid-feedback">Looks good!</div> */}
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label" for="email">
-                      Email
-                    </label>
-                    <input
-                      class="form-control"
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
+                    <FormErrorMessage mt={0} mb={3} ml={5}>
+                      {form.errors.username}
+                    </FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="email" validate={validateEmail}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.email && form.touched.email}
+                  >
+                    <FormLabel ml={5}>Email</FormLabel>
+                    <Input
+                      {...field}
+                      placeholder="Email"
+                      backgroundColor="white"
+                      mb={2}
+                      mx={5}
+                      width="90%"
                     />
-                    {/* <div class="valid-feedback">Looks good!</div> */}
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label" for="password">
-                      Password
-                    </label>
-                    <input
-                      class="form-control"
-                      type="password"
-                      id="password"
-                      name="password"
-                      required
+                    <FormErrorMessage mt={0} mb={3} ml={5}>{form.errors.email}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="password" validate={validatePassword}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.password && form.touched.password}
+                  >
+                    <FormLabel ml={5}>Password</FormLabel>
+                    <Input
+                      {...field}
+                      placeholder="Password"
+                      backgroundColor="white"
+                      mb={2}
+                      mx={5}
+                      width="90%"
                     />
-                    {/* <div class="valid-feedback">Looks good!</div> */}
-                  </div>
-                  <Button>Register</Button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                    <FormErrorMessage mt={0} mb={3} ml={5}>
+                      {form.errors.password}
+                    </FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Button
+                my={4}
+                mx={5}
+                colorScheme="teal"
+                isLoading={props.isSubmitting}
+                type="Login"
+                size="md"
+                width="90%"
+              >
+                Register
+              </Button>
+            </Form>
+          )}
+        </Formik>
+      </Card>
       <Footer />
-    </>
+    </Flex>
   );
 };
 
