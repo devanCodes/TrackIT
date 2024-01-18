@@ -55,7 +55,7 @@ const About = () => {
       <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={50} mx="auto">
         Testimonials
       </Text>
-      <SimpleGrid gap={4} columns={[1, 1, 2, 2]} justifyContent="space-between" alignItems="center" mx="auto">
+      <SimpleGrid gap={4} columns={[1, 1, 1, 2]} justifyContent="space-between" alignItems="center" mx="auto">
         <Card maxW="sm">
           <CardBody backgroundColor="blue.200">
             <Image
