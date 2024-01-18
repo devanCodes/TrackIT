@@ -51,48 +51,68 @@ const Contact = () => {
       >
         Contact Me!
       </Heading>
-      <Formik
-        initialValues={{ name: "", email: "" }}
-        onSubmit={(values, actions) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }, 1000);
-        }}
-      >
-        {(props) => (
-          <Form>
-            <Field name="name" validate={validateName}>
-              {({ field, form }) => (
-                <FormControl isInvalid={form.errors.name && form.touched.name}>
-                  <FormLabel>First Name</FormLabel>
-                  <Input {...field} placeholder="First Name" backgroundColor="white"/>
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <Field name="email" validate={validateEmail}>
-              {({ field, form }) => (
-                <FormControl isInvalid={form.errors.email && form.touched.email}>
-                  <FormLabel>Email</FormLabel>
-                  <Input {...field} placeholder="Email" backgroundColor="white"/>
-                  <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-            <FormLabel>Message</FormLabel>
-            <Textarea placeholder='Type your message here!' backgroundColor="white"/>
-            <Button
-              mt={4}
-              colorScheme="teal"
-              isLoading={props.isSubmitting}
-              type="submit"
-            >
-              Submit
-            </Button>
-          </Form>
-        )}
-      </Formik>
+      <Flex mx="auto" direction="column" minWidth={["none", "none", "500px"]}>
+        <Formik
+          initialValues={{ name: "", email: "" }}
+          onSubmit={(values, actions) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              actions.setSubmitting(false);
+            }, 1000);
+          }}
+        >
+          {(props) => (
+            <Form>
+              <Field name="name" validate={validateName}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.name && form.touched.name}
+                  >
+                    <FormLabel>First Name</FormLabel>
+                    <Input
+                      {...field}
+                      placeholder="First Name"
+                      backgroundColor="white"
+                      mb={2}
+                    />
+                    <FormErrorMessage mt={0} mb={3}>{form.errors.name}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="email" validate={validateEmail}>
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.email && form.touched.email}
+                  >
+                    <FormLabel>Email</FormLabel>
+                    <Input
+                      {...field}
+                      placeholder="Email"
+                      backgroundColor="white"
+                      mb={2}
+                    />
+                    <FormErrorMessage mt={0} mb={3}>{form.errors.email}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <FormLabel>Message</FormLabel>
+              <Textarea
+                placeholder="Type your message here!"
+                backgroundColor="white"
+              />
+              <Button
+                mt={4}
+                colorScheme="teal"
+                isLoading={props.isSubmitting}
+                type="submit"
+                size="lg"
+              >
+                Submit
+              </Button>
+            </Form>
+          )}
+        </Formik>
+      </Flex>
       <Footer />
     </Flex>
   );
