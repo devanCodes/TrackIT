@@ -1,60 +1,100 @@
 import React from "react";
-import { Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Text,
+  Button,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  Input,
+  Textarea,
+  Heading,
+} from "@chakra-ui/react";
+import { Field, Form, Formik } from "formik";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// WILL NEED TO REFACTOR FROM TAILWIND TO CHAKRAUI
+// NEED TO WORK ON FORM ROUTE AND ACTUALLY VALIDATING EMAIL WITH FORMIK AND INCORPORATE FLASH
 
 const Contact = () => {
+  function validateName(value) {
+    let error;
+    if (!value) {
+      error = "Name is required";
+    }
+    return error;
+  }
+
+  function validateEmail(value) {
+    let error;
+    if (!value) {
+      error = "Email is required";
+    }
+    return error;
+  }
+
   return (
-    <>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+    <Flex
+      w="100%"
+      minHeight="100vh"
+      direction="column"
+      backgroundColor="rgba(255,205,84,255)"
+      bgSize="cover"
+    >
       <Navbar />
-      <h1>Contact Page</h1>
-      {/* setting up a flexbox container with a vertical layout */}
-      <div className="flex flex-col mb-10 mx-auto">
-        {/* centering its children both horizontally and vertically within its parent container */}
-        <div className="flex justify-center items-center">
-          {/* creating a form element */}
-          <form
-            action="https://getform.io/f/269790e2-0ff0-476e-8c4b-d72394a966a6" // specific URL to which the form data will be submitted
-            method="POST" // specified HTTP method to be used when submitting the form
-            className="flex flex-col w-full md:w-7/12"
-          >
-            <h2>Contact Me</h2>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="p-2 bg-transparent border-2 rounded-md focus:outline-none"
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="Email"
-              className="my-2 p-2 bg-transparent border-2 rounded-md focus:outline-none"
-            />
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows="10" // initial number of rows displayed in the textarea
-              className="p-2 mb-4 bg-transparent border-2 rounded-md focus:outline-none"
-            />
+      <Heading
+        fontSize={["3xl", "3xl", "6xl"]}
+        fontWeight="extrabold"
+        pt={75}
+        mt="auto"
+        mx="auto"
+      >
+        Contact Me!
+      </Heading>
+      <Formik
+        initialValues={{ name: "", email: "" }}
+        onSubmit={(values, actions) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            actions.setSubmitting(false);
+          }, 1000);
+        }}
+      >
+        {(props) => (
+          <Form>
+            <Field name="name" validate={validateName}>
+              {({ field, form }) => (
+                <FormControl isInvalid={form.errors.name && form.touched.name}>
+                  <FormLabel>First Name</FormLabel>
+                  <Input {...field} placeholder="First Name" backgroundColor="white"/>
+                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
+            <Field name="email" validate={validateEmail}>
+              {({ field, form }) => (
+                <FormControl isInvalid={form.errors.email && form.touched.email}>
+                  <FormLabel>Email</FormLabel>
+                  <Input {...field} placeholder="Email" backgroundColor="white"/>
+                  <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                </FormControl>
+              )}
+            </Field>
+            <FormLabel>Message</FormLabel>
+            <Textarea placeholder='Type your message here!' backgroundColor="white"/>
             <Button
-              type="button"
-              className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-white bg-gradient-to-r from-lime-700 to-lime-400 drop-shadow-md hover:stroke-white hover:scale-105 hover:duration-1000"
+              mt={4}
+              colorScheme="teal"
+              isLoading={props.isSubmitting}
+              type="submit"
             >
-              Send
+              Submit
             </Button>
-          </form>
-        </div>
-      </div>
+          </Form>
+        )}
+      </Formik>
       <Footer />
-    </>
+    </Flex>
   );
 };
 

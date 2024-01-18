@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flex, Button, Text, Box } from "@chakra-ui/react";
+import { Flex, Button, Text, Box, Heading } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import bgImage from "../assets/bgImage.jpg";
@@ -15,9 +15,9 @@ const Home = () => {
       bgSize="cover"
     >
       <Navbar />
-      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" pt={70} mt="auto" mx="auto">
+      <Heading fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" pt={75} mt="auto" mx="auto">
         Welcome to TrackIT!
-      </Text>
+      </Heading>
       <Text fontSize={["lg", "lg", "2xl"]} mx="auto" px={250} fontWeight="bold" align="center">
         Your personalized hub for tracking daily caloric intake effortlessly.
         With our user-friendly interface and comprehensive food database powered

@@ -9,22 +9,19 @@ import {
   Image,
   Stack,
   Heading,
-  Divider,
   SimpleGrid,
 } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// WILL NEED TO REFACTOR FROM TAILWIND TO CHAKRAUI
-// PROBABLY WILL DO A DIFFERENT DESIGN TO NOT COPY CLAYDY'S WEBSITE
 
 const About = () => {
   return (
-    <Flex w="100%" direction="column" backgroundColor="rgba(255,205,84,255)" bgSize="cover">
+    <Flex w="100%" minHeight="100vh" direction="column" backgroundColor="rgba(255,205,84,255)" bgSize="cover">
       <Navbar />
-      <Text fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" mt={70} mx="auto">
+      <Heading fontSize={["3xl", "3xl", "6xl"]} fontWeight="extrabold" pt={75} mt="auto" mx="auto">
         About TrackIT!
-      </Text>
+      </Heading>
       <Text fontSize={["md", "md", "lg"]} mx={100} align="center">
         In the vibrant world of health and wellness, TrackIT! emerged as a
         beacon of nutritional empowerment. Founded in 2023 by passionate fitness
