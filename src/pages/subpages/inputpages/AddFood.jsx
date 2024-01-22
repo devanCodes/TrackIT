@@ -31,6 +31,7 @@ const AddFood = () => {
         fontSize={["md", "md", "lg"]}
         fontWeight="semibold"
         mx={100}
+        mt={5}
         align="center"
       >
         Add food to (meal name that will be dynamic)
