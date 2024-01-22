@@ -4,9 +4,9 @@ import { Button } from '@chakra-ui/react'
 
 const QuickAddBtn = () => {
   return (
-    <Button>
-      <Link to="/tracking/diary/quick_add">Quick Add</Link>
-    </Button>
+      <Link to="/tracking/diary/quick_add">
+        <Button>Quick Add</Button>
+      </Link>
   );
 };
 
