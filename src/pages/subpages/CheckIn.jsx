@@ -78,8 +78,8 @@ const CheckIn = () => {
           <Button>Add Weight</Button>
         </Link>
       </Box>
-      <TableContainer mx="auto" mt={5} width={["80%", "65%", "50%", "35%"]}>
-        <Table variant="simple">
+      <TableContainer backgroundColor="white" mx="auto" mt={5} width={["80%", "65%", "50%", "35%"]}>
+        <Table variant="striped">
           <TableCaption>Weight History</TableCaption>
           <Thead>
             <Tr>

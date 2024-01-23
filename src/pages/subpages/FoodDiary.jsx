@@ -100,7 +100,7 @@ const FoodDiary = () => {
         <QuickAddBtn />
         <Divider mt={1} />
       </Box>
-      <TableContainer mx="auto" width="75%">
+      <TableContainer mx="auto" width="75%" backgroundColor="white">
         <Table variant="simple">
           <Tbody>
             <Tr>
@@ -114,10 +114,10 @@ const FoodDiary = () => {
           <Tfoot>
             <Tr>
               <Th></Th>
-              <Th isNumeric fontWeight="black">Calories (kcal)</Th>
-              <Th isNumeric fontWeight="black">Protein (g)</Th>
-              <Th isNumeric fontWeight="black">Carbs (g)</Th>
-              <Th isNumeric fontWeight="black">Fat (g)</Th>
+              <Th isNumeric fontWeight="bold">Calories (kcal)</Th>
+              <Th isNumeric fontWeight="bold">Protein (g)</Th>
+              <Th isNumeric fontWeight="bold">Carbs (g)</Th>
+              <Th isNumeric fontWeight="bold">Fat (g)</Th>
             </Tr>
           </Tfoot>
         </Table>

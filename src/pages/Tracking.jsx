@@ -42,9 +42,9 @@ const Tracking = () => {
         <Table variant="simple">
           <Thead>
             <Tr>
-              <Th isNumeric>Calories Remaining</Th>
-              <Th isNumeric>Goal</Th>
-              <Th isNumeric>Calories Consumed</Th>
+              <Th isNumeric fontWeight="bold">Calories Remaining</Th>
+              <Th isNumeric fontWeight="bold">Goal</Th>
+              <Th isNumeric fontWeight="bold">Calories Consumed</Th>
             </Tr>
           </Thead>
           <Tbody>
