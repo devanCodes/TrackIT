@@ -1,10 +1,27 @@
 import React, { useState } from "react";
-import { Button } from "@chakra-ui/react";
+import {
+  Button,
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Select,
+  Input,
+  FormLabel,
+  HStack,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+  InputGroup,
+  InputRightAddon,
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-// MUST REFACTOR THIS FROM TAILWIND TO CHAKRA UI!!!!!!!
+// MIGHT ADD INCREMENT AND DECREMENT STEPPER TO NUMBER INPUTS
 // Also need to allow "Set As Goal" buttons to be dynamically updated Goals in Goals subpage
 
 const Calculator = () => {
@@ -131,78 +148,89 @@ const Calculator = () => {
   };
 
   return (
-    <>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+    <Flex
+      w="100%"
+      minHeight="100vh"
+      direction="column"
+      backgroundColor="rgba(255,205,84,255)"
+      bgSize="cover"
+    >
       <Navbar />
-      <h1>Calculator Page</h1>
+      <Heading
+        fontSize={["3xl", "3xl", "5xl", "6xl"]}
+        fontWeight="extrabold"
+        pt={75}
+        mt="auto"
+        mx="auto"
+        mb={4}
+      >
+        Harris-Benedict Calculator
+      </Heading>
+      <Text
+        fontSize={["md", "md", "lg"]}
+        fontWeight="semibold"
+        mx={100}
+        align="center"
+        mb={2}
+      >
+        Calculate your caloric maintenance with the Harris-Benedict calculator
+        by filling out the form below!
+      </Text>
       {/* JSX structure that includes a form for user inputs and a button to
       trigger the calculation // input fields are controlled components, meaning
       their values are controlled by the state variables, and their changes are
       tracked using the 'onChange' event handlers // some input fields have
       specific validation logic, such as preventing non-digit characters and
       limiting the input range */}
-      <div className="p-6 mx-auto container flex flex-col w-full space-y-6">
-        <label className="block text-xl font-medium mb-1">
-          Gender:
-          <select
-            className="px-4 py-1 border border-black border-solid rounded-lg w-fit h-1/6 ml-1"
-            id="gender"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </label>
-        <label className="block text-xl font-medium mb-1">
-          Weight:
-          <input
-            className="w-[15%] mr-1 ml-1 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
-            type="number"
-            value={weight}
-            onChange={(e) => {
-              const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
-              if (newValue.length === 1) {
-                setWeight(newValue); // Keep single digits including zero
-              } else {
-                setWeight(newValue.replace(/^0+/, "")); // Remove leading zeros
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "." || e.key === "e") {
-                e.preventDefault(); // Prevent entering period or exponential notation
-              }
-            }}
-            min="1"
-          />
-          <select
-            className="px-2 py-1 border border-black border-solid rounded-lg w-fit h-1/6"
-            id="weight"
-            value={weightUnit}
-            onChange={(e) => setWeightUnit(e.target.value)}
-          >
-            <option value="kg">kg</option>
-            <option value="lb">lb</option>
-          </select>
-        </label>
-        <label className="block text-xl font-medium mb-1">
-          Height:
-          {heightUnit === "ft" ? (
-            <>
-              <input
-                className="w-[15%] ml-1 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
+      <Flex direction="column" mx="auto" width={["90%", "75%", "55%", "42%"]}>
+        <Flex>
+          <FormLabel width="40%">
+            Gender
+            <Select
+              backgroundColor="white"
+              id="gender"
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </Select>
+          </FormLabel>
+          <FormLabel width="20%">
+            Age
+            <Input
+              backgroundColor="white"
+              type="number"
+              value={age}
+              onChange={(e) => {
+                const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
+                if (newValue.length === 1) {
+                  setAge(newValue); // Keep single digits including zero
+                } else {
+                  setAge(newValue.replace(/^0+/, "")); // Remove leading zeros
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "." || e.key === "e") {
+                  e.preventDefault(); // Prevent entering period or exponential notation
+                }
+              }}
+              min="1"
+            />
+          </FormLabel>
+          <FormLabel>
+            Weight
+            <Flex>
+              <Input
+                backgroundColor="white"
                 type="number"
-                value={heightFeet}
+                value={weight}
                 onChange={(e) => {
                   const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
                   if (newValue.length === 1) {
-                    setHeightFeet(newValue); // Keep single digits including zero
+                    setWeight(newValue); // Keep single digits including zero
                   } else {
-                    setHeightFeet(newValue.replace(/^0+/, "")); // Remove leading zeros
+                    setWeight(newValue.replace(/^0+/, "")); // Remove leading zeros
                   }
                 }}
                 onKeyDown={(e) => {
@@ -211,110 +239,141 @@ const Calculator = () => {
                   }
                 }}
                 min="1"
-              />{" "}
-              ft
-              <input
-                className="w-[15%] ml-3 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
-                type="number"
-                value={heightInches}
-                onChange={(e) => {
-                  const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
-                  if (newValue.length === 1) {
-                    setHeightInches(newValue); // Keep single digits including zero
-                  } else {
-                    setHeightInches(newValue.replace(/^0+/, "")); // Remove leading zeros
-                  }
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "." || e.key === "e") {
-                    e.preventDefault(); // Prevent entering period or exponential notation
-                  }
-                }}
-                min="0"
-                max="11"
-              />{" "}
-              in
-            </>
-          ) : (
-            <>
-              <input
-                className="w-[15%] ml-1 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
-                type="number"
-                value={heightFeet}
-                onChange={(e) => {
-                  const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
-                  if (newValue.length === 1) {
-                    setHeightFeet(newValue); // Keep single digits including zero
-                  } else {
-                    setHeightFeet(newValue.replace(/^0+/, "")); // Remove leading zeros
-                  }
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "." || e.key === "e") {
-                    e.preventDefault(); // Prevent entering period or exponential notation
-                  }
-                }}
-                min="1"
-              />{" "}
-              m
-              <input
-                className="w-[15%] ml-3 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
-                type="number"
-                value={heightInches}
-                onChange={(e) => {
-                  const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
-                  if (newValue.length === 1) {
-                    setHeightInches(newValue); // Keep single digits including zero
-                  } else {
-                    setHeightInches(newValue.replace(/^0+/, "")); // Remove leading zeros
-                  }
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === "." || e.key === "e") {
-                    e.preventDefault(); // Prevent entering period or exponential notation
-                  }
-                }}
-                min="0"
-              />{" "}
-              cm
-            </>
-          )}
-          <select
-            className="w-fit mr-5 mt-2 lg:mt-0 lg:ml-1 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
-            id="height"
-            value={heightUnit}
-            onChange={(e) => setHeightUnit(e.target.value)}
-          >
-            <option value="m">meters/centimeters</option>
-            <option value="ft">feet/inches</option>
-          </select>
-        </label>
-        <label className="block text-xl font-medium mb-1">
-          Age:
-          <input
-            className="w-[15%] ml-1 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
-            type="number"
-            value={age}
-            onChange={(e) => {
-              const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
-              if (newValue.length === 1) {
-                setAge(newValue); // Keep single digits including zero
-              } else {
-                setAge(newValue.replace(/^0+/, "")); // Remove leading zeros
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "." || e.key === "e") {
-                e.preventDefault(); // Prevent entering period or exponential notation
-              }
-            }}
-            min="1"
-          />
-        </label>
-        <label className="text-xl font-medium mb-1">
-          Activity Level:
-          <select
-            className="lg:ml-1 w-3/4 mt-1 lg:mt-0 px-2 py-1 border border-black border-solid rounded-lg h-1/6"
+              />
+              <Select
+                backgroundColor="white"
+                pl={1}
+                width="60%"
+                id="weight"
+                value={weightUnit}
+                onChange={(e) => setWeightUnit(e.target.value)}
+              >
+                <option value="kg">kg</option>
+                <option value="lb">lb</option>
+              </Select>
+            </Flex>
+          </FormLabel>
+        </Flex>
+        <Flex>
+          <FormLabel>
+            Height
+            {heightUnit === "ft" ? (
+              <Flex>
+                <Input
+                  backgroundColor="white"
+                  width="40%"
+                  type="number"
+                  value={heightFeet}
+                  onChange={(e) => {
+                    const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
+                    if (newValue.length === 1) {
+                      setHeightFeet(newValue); // Keep single digits including zero
+                    } else {
+                      setHeightFeet(newValue.replace(/^0+/, "")); // Remove leading zeros
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "." || e.key === "e") {
+                      e.preventDefault(); // Prevent entering period or exponential notation
+                    }
+                  }}
+                  min="1"
+                />{" "}
+                <Text mx={1} mt={3}>
+                  ft
+                </Text>
+                <Input
+                  backgroundColor="white"
+                  width="40%"
+                  type="number"
+                  value={heightInches}
+                  onChange={(e) => {
+                    const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
+                    if (newValue.length === 1) {
+                      setHeightInches(newValue); // Keep single digits including zero
+                    } else {
+                      setHeightInches(newValue.replace(/^0+/, "")); // Remove leading zeros
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "." || e.key === "e") {
+                      e.preventDefault(); // Prevent entering period or exponential notation
+                    }
+                  }}
+                  min="0"
+                  max="11"
+                />{" "}
+                <Text ml={1} mt={3}>
+                  in
+                </Text>
+              </Flex>
+            ) : (
+              <Flex>
+                <Input
+                  backgroundColor="white"
+                  width="40%"
+                  type="number"
+                  value={heightFeet}
+                  onChange={(e) => {
+                    const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
+                    if (newValue.length === 1) {
+                      setHeightFeet(newValue); // Keep single digits including zero
+                    } else {
+                      setHeightFeet(newValue.replace(/^0+/, "")); // Remove leading zeros
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "." || e.key === "e") {
+                      e.preventDefault(); // Prevent entering period or exponential notation
+                    }
+                  }}
+                  min="1"
+                />{" "}
+                <Text mx={1} mt={3}>
+                  m
+                </Text>
+                <Input
+                  backgroundColor="white"
+                  width="40%"
+                  type="number"
+                  value={heightInches}
+                  onChange={(e) => {
+                    const newValue = e.target.value.replace(/[^0-9]/g, ""); // Remove any non-digit characters
+                    if (newValue.length === 1) {
+                      setHeightInches(newValue); // Keep single digits including zero
+                    } else {
+                      setHeightInches(newValue.replace(/^0+/, "")); // Remove leading zeros
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "." || e.key === "e") {
+                      e.preventDefault(); // Prevent entering period or exponential notation
+                    }
+                  }}
+                  min="0"
+                />{" "}
+                <Text ml={1} mt={3}>
+                  cm
+                </Text>
+              </Flex>
+            )}
+            <Select
+              backgroundColor="white"
+              width="40%"
+              mt={1}
+              id="height"
+              value={heightUnit}
+              onChange={(e) => setHeightUnit(e.target.value)}
+            >
+              <option value="m">meters/centimeters</option>
+              <option value="ft">feet/inches</option>
+            </Select>
+          </FormLabel>
+        </Flex>
+        <FormLabel>
+          Activity Level
+          <Select
+            backgroundColor="white"
             id="activityLevel"
             value={activityLevel}
             onChange={(e) => setActivityLevel(e.target.value)}
@@ -332,43 +391,86 @@ const Calculator = () => {
             <option value="extraActive">
               Extra Active (very hard exercise/sports & a physical job)
             </option>
-          </select>
-        </label>
+          </Select>
+        </FormLabel>
         <Button
-          className="flex justify-center mx-auto font-semibold p-3 px-6 pt-2 w-44 text-white bg-stone-700 rounded-lg baseline hover:bg-stone-600 hover:duration-500 hover:scale-105"
+          width="25%"
+          mt={2}
+          type="submit"
           onClick={calculateCaloricMaintenance} // triggers the calculateCaloricMaintenance function
         >
           Calculate
         </Button>
         {caloricMaintenance && (
-          <div>
-            <h2 className="text-center">
-              Caloric Maintenance: {Math.round(caloricMaintenance)} calories
-            </h2>
-            <h1>Consuming Recommendations:</h1>
-            <h2>
-              To Lose Weight: {Math.round(caloricMaintenance) - 500} calories
-            </h2>
-            <Button>
-              <Link to="/tracking/goals">Set As Goal</Link>
-            </Button>
-            <h2>
-              To Maintain Weight: {Math.round(caloricMaintenance)} calories
-            </h2>
-            <Button>
-              <Link to="/tracking/goals">Set As Goal</Link>
-            </Button>
-            <h2>
-              To Gain Weight: {Math.round(caloricMaintenance) + 500} calories
-            </h2>
-            <Button>
-              <Link to="/tracking/goals">Set As Goal</Link>
-            </Button>
-          </div>
+          <Box mt={5}>
+            <Flex fontSize="2xl">
+              Caloric Maintenance:{" "}
+              <Text fontWeight="bold" ml={2}>
+                {Math.round(caloricMaintenance)} calories
+              </Text>
+            </Flex>
+            <Text fontSize="lg" fontWeight="bold" mt={8}>
+              Consuming Recommendations:
+            </Text>
+            <Flex mt={4}>
+              <Text fontSize={["md", "md", "lg"]} pt={1}>
+                To Lose Weight:
+              </Text>
+              <Text
+                fontSize={["md", "md", "lg"]}
+                fontWeight="bold"
+                ml={3}
+                pt={1}
+              >
+                {Math.round(caloricMaintenance) - 500} calories
+              </Text>
+              <Box ml={2}>
+                <Link to="/tracking/goals">
+                  <Button>Set As Goal</Button>
+                </Link>
+              </Box>
+            </Flex>
+            <Flex mt={4}>
+              <Text fontSize={["md", "md", "lg"]} pt={1}>
+                To Maintain Weight:
+              </Text>
+              <Text
+                fontSize={["md", "md", "lg"]}
+                fontWeight="bold"
+                ml={3}
+                pt={1}
+              >
+                {Math.round(caloricMaintenance)} calories
+              </Text>
+              <Box ml={2}>
+                <Link to="/tracking/goals">
+                  <Button>Set As Goal</Button>
+                </Link>
+              </Box>
+            </Flex>
+            <Flex mt={4}>
+              <Text fontSize={["md", "md", "lg"]} pt={1}>
+                To Gain Weight:
+              </Text>
+              <Text
+                fontSize={["md", "md", "lg"]}
+                fontWeight="bold"
+                ml={3}
+                pt={1}
+              >
+                {Math.round(caloricMaintenance) + 500} calories
+              </Text>
+              <Box ml={2}>
+                <Link to="/tracking/goals">
+                  <Button>Set As Goal</Button>
+                </Link>
+              </Box>
+            </Flex>
+          </Box>
         )}
-      </div>
+      </Flex>
       <Footer />
-    </>
+    </Flex>
   );
 };
 

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Flex,
   Link,
-  Box,
   Heading,
   Text,
   Table,
